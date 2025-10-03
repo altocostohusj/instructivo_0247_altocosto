@@ -126,12 +126,12 @@ En la auditoría se evidencia que escriben el nombre del paciente en el campo de
 
 ---
 
-# Variable 6. Número de Identificación del usuario
+# Variable 6. Entero de Identificación del usuario
 
 **Descripción:**
-Número de identificación del afiliado según el tipo de identificación. Para MS y AS registre el consecutivo interno del afiliado según lo dispuesto en la Resolución 4622/2016.
+Entero de identificación del afiliado según el tipo de identificación. Para MS y AS registre el consecutivo interno del afiliado según lo dispuesto en la Resolución 4622/2016.
 
-**Tipo de dato:** Número
+**Tipo de dato:** Entero
 
 ---
 
@@ -160,7 +160,7 @@ Registre la fecha de nacimiento del usuario en el formato AAAA-MMDD, según lo r
 **Descripción:**
 Código según la Clasificación Internacional Uniforme de Ocupaciones, registre:
 
-**Tipo de dato:** Número
+**Tipo de dato:** Entero
 
 ### Valores permitidos
 9999: No existe información
@@ -188,13 +188,13 @@ Código según la Clasificación Internacional Uniforme de Ocupaciones, registre
 **Descripción:**
 Cuando el usuario tenga EAPB escriba el código de la empresa que registra al usuario. Cuando el usuario sea notificado por entidad territorial escriba el código de departamento y seguido de tres ceros Ej: 01000 donde 01 corresponde al código de departamento según DANE.
 
-**Tipo de dato:** Número
+**Tipo de dato:** Entero
 
 ---
 
 # Variable 12. Código pertenencia étnica
 
-**Tipo de dato:** Número
+**Tipo de dato:** Entero
 
 ### Valores permitidos
 - 1: Indígena
@@ -208,7 +208,7 @@ Cuando el usuario tenga EAPB escriba el código de la empresa que registra al us
 
 # Variable 13. Grupo poblacional
 
-**Tipo de dato:** Número
+**Tipo de dato:** Entero
 
 ### Valores permitidos
 - 1: Indigentes
@@ -258,16 +258,16 @@ Cuando el usuario tenga EAPB escriba el código de la empresa que registra al us
 **Descripción:**
 Registre el Código del municipio en donde reside el afiliado según la división político administrativa DIVIPOLA – DANE. Este código debe ser reportado en 5 dígitos, en el cual los dos primeros dígitos corresponden al departamento donde se localiza el municipio. Validar que no se reporte la ciudad en la que recibe las atenciones en salud, cuando es en realidad reside de otro municipio.
 
-**Tipo de dato:** Número
+**Tipo de dato:** Entero
 
 ---
 
-# Variable 15. Número telefónico del paciente (incluyendo a familiares y cuidadores)
+# Variable 15. Entero telefónico del paciente (incluyendo a familiares y cuidadores)
 
 **Descripción:**
 Registre sólo dos números de teléfono(s) fijos y/o móviles completos para contactar al paciente y separe por guion medio (-). Si no se tiene el número telefónico del paciente (incluyendo familiares y cuidadores) diligencie 0.
 
-**Tipo de dato:** Número
+**Tipo de dato:** Entero
 
 ---
 
@@ -386,7 +386,7 @@ En los casos en que el reporte de patología no registra fecha de ingreso de la 
 
 # Variable 21. Tipo de estudio con el que se realizó el diagnóstico de cáncer
 
-**Tipo de dato:** Número
+**Tipo de dato:** Entero
 
 ### Valores permitidos
 - 5: Inmunohistoquímica
@@ -409,7 +409,7 @@ Registre el primer estudio que permitió confirmar el cáncer.
 
 # Variable 22. Motivo por el cual el usuario no tuvo diagnóstico por histopatología (aplica para registros con respuesta igual a 7 en la variable anterior)
 
-**Tipo de dato:** Número
+**Tipo de dato:** Entero
 
 ### Valores permitidos
 - 1: Clínica, usuario con coagulopatía
@@ -470,7 +470,7 @@ patología para dar respuesta a esta variable.
 **Descripción:**
 Registre el código de habilitación (disponible en la página web REPS – código de 12 dígitos incluido el cero inicial) de la IPS que proceso la muestra de patología en los casos en que el diagnóstico fue histopatológico o registre el código de la IPS donde se hizo el diagnóstico clínico. Verifique que el código reportado corresponde a una IPS con habilitación para procesamiento de muestra de patología o el servicio especializado que hace el diagnóstico clínico.
 
-**Tipo de dato:** Número
+**Tipo de dato:** Entero
 
 ### Valores permitidos
 - 96: Diagnóstico fuera del país.
@@ -506,7 +506,7 @@ Para los usuarios con diagnóstico de cáncer histopatológico a partir del 1 de
 **Descripción:**
 Registre el número que corresponde al subtipo histológico de la biopsia diagnóstica del cáncer (como primera opción), si no hay información en ese reporte use la quirúrgica:
 
-**Tipo de dato:** Número
+**Tipo de dato:** Entero
 
 ### Valores permitidos
 - 1: Adenocarcinoma, con o sin otra especificación
@@ -550,7 +550,7 @@ En el instructivo de reporte 2025, se incluye la opción 21: célula pequeña (�
 **Descripción:**
 Apunte el número que corresponde al grado de diferenciación de la biopsia diagnóstica del cáncer (como primera opción), si no hay información en ese informe, use la quirúrgica.
 
-**Tipo de dato:** Número
+**Tipo de dato:** Entero
 
 ### Valores permitidos
 - 1: Bien diferenciado (grado 1)
@@ -575,3 +575,827 @@ La opción 99 sólo es válida para diagnóstico antes de 2015-01-01, se aclara 
 
 # Variable 29. Si es tumor sólido, cuál fue la primera estadificación basada en TNM, FIGO, u otras compatibles con esta numeración según tumor
 
+### Cáncer de mama y gástrico
+- 0: estadio clínico (ec) 0 (tumor in situ)
+- 2: ec IA o 1A
+- 5: ec IB o 1b
+- 11: ec IIA o 2a
+- 14: ec IIB
+- 17: ec IIIA o 3a
+- 18: ec IIIB o 3b
+- 19: ec IIIC o 3c
+- 20: ec IV o 4
+
+### Cáncer de próstata
+- 0: estadio clínico (ec) 0 (tumor in situ)
+- 1: ec I o 1
+- 11: ec IIA o 2a
+- 14: ec IIB
+- 15: ec IIC o 2c
+- 17: ec IIIA o 3a
+- 18: ec IIIB o 3b
+- 19: ec IIIC o 3c
+- 21: ec IVA o 4a
+- 22: ec IVB o 4b
+
+### Cáncer de pulmón (8ª Edición TNM)
+- 0: estadio clínico (ec) 0 (tumor in situ)
+- 3: ec IA1
+- 4: ec IA2
+- 36: ec IA3
+- 11: ec IIA o 2a
+- 14: ec IIB o 2b
+- 17: ec IIIA o 3a
+- 18: ec IIIB o 3b
+- 19: ec IIIC o 3c
+- 21: ec IVA o 4a
+- 22: ec IVB o 4b
+
+### Melanoma
+- 0: estadio clínico (ec) 0 (tumor in situ)
+- 2: ec IA o 1A
+- 5: ec IB o 1b
+- 11: ec IIA o 2a
+- 14: ec IIB o 2b
+- 15: ec IIC o 2c
+- 17: ec IIIA o 3a
+- 18: ec IIIB o 3b
+- 19: ec IIIC o 3c
+- 29: ec IIID o 3d
+- 20: ec IV o 4
+
+### Cáncer de colon y recto
+- 0: estadio clínico (ec) 0 (tumor in situ)
+- 1: ec I o 1
+- 11: ec IIA o 2a
+- 14: ec IIB o 2b
+- 15: ec IIC o 2c
+- 17: ec IIIA o 3a
+- 18: ec IIIB o 3b
+- 19: ec IIIC o 3c
+- 21: ec IVA o 4a
+- 22: ec IVB o 4b
+- 23: ec IVC o 4c
+
+### Cáncer anal (Agrupador Colon y Recto, 8ª Edición TNM)
+- 0: estadio clínico (ec) 0 (tumor in situ)
+- 1: ec I o 1
+- 11: ec IIA o 2a
+- 14: ec IIB o 2b
+- 17: ec IIIA o 3a
+- 18: ec IIIB o 3b
+- 19: ec IIIC o 3c
+- 20: ec IV o 4
+
+### Cáncer de cérvix (FIGO)
+- 0: estadio clínico (ec) 0 (tumor in situ)
+- 1: ec I o 1
+- 2: ec IA o 1A
+- 3: ec IA1
+- 4: ec IA2
+- 5: ec IB o 1b
+- 6: ec IB1
+- 7: ec IB2
+- 30: ec IB3
+- 10: ec II o 2
+- 11: ec IIA o 2a
+- 12: ec IIA1
+- 13: ec IIA2
+- 14: ec IIB o 2b
+- 16: ec III o 3
+- 17: ec IIIA o 3a
+- 18: ec IIIB o 3b
+- 19: ec IIIC o 3c
+- 27: ec IIIC1
+- 28: ec IIIC2
+- 21: ec IVA o 4a
+- 22: ec IVB o 4b
+
+### Otras opciones
+- 8: ec IC o 1c
+- 9: ec IS o 1s
+- 24: ec 4S (para neuroblastoma)
+- 25: ec V o 5
+- 31: ec IC1
+- 32: ec IC2
+- 33: ec IC3
+- 34: ec IIIA1
+- 35: ec IIIA2
+- 98: No Aplica (Es cáncer de piel basocelular, es cáncer hematológico o es cáncer en SNC, excepto neuroblastoma)
+- 99: Desconocido, el dato de esta variable no se encuentra descrito en los soportes clínicos
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*En caso de más de una estadificación (clínica, patológica, etc.), registre aquella que fue usada
+para iniciar el tratamiento o la primera registrada en la historia clínica al completar los exámenes
+de extensión. Escoja el número que representa la estadificación clínica.<br>
+*Por otra parte, se presentan las opciones de estadificación por los agrupadores de cánceres
+priorizados; sin embargo, en los casos que esté reportando algún tipo de cáncer no priorizado
+puede seleccionar la opción de respuesta que tenga registrada en el soporte clínico, sin tener
+presente el agrupador acá mencionado.<br>
+*Capturar la información descrita en la historia clínica en los casos en que la estadificación no
+corresponde al agrupador mencionado.<br>
+*Para los usuarios con diagnóstico de cáncer histopatológico a partir del 1 de noviembre de 2024
+y que no alcanzaron a tener la consulta en donde se estadifica el tumor, reportar en esta variable
+la opción 99 y en la variable 128 la novedad 2, 10 ó 13 según corresponda.<br>
+*Las opciones 34 y 35 como parte de la clasificación FIGO para cáncer de ovario, no son válidos
+en cérvix.<br>
+*La opción 99 en incidentes, será considerado gestión deficiente del dato,<br>
+*Si en variable 17 se reportó un CIE-10 que inicia por letra D, es decir, cáncer in situ, el estadio a
+reportar en variable 29 debe ser coherente, es decir, opción 0: estadio clínico (ec) o (tumor in
+situ).
+
+</p>
+
+---
+
+# Variable 30. Fecha en que se realizó esta estadificación
+
+**Descripción:**
+Registre la fecha en el formato AAAA-MM-DD. Si conoce sólo el año y el mes, registre el día 15.
+
+**Tipo de dato:** Fecha
+
+### Valores permitidos
+
+- 1800-01-01: Desconocido, el dato de esta variable no se encuentra descrito en los soportes clínicos.
+- 1845-01-01: No Aplica (Es cáncer de piel basocelular, es cáncer hematológico o es cáncer en SNC, excepto neuroblastoma)
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*Para los usuarios con diagnóstico de cáncer histopatológico a partir del 1 de noviembre de 2024 y que no alcanzaron a tener la consulta en donde se estadifica el tumor, reportar en esta variable la opción 1800-01-01 y en la variable 128 la novedad 2, 10 o 13.
+</p>
+
+---
+
+# Variable 31. Para cáncer de mama, ¿se le realizó a este usuario la prueba HER2 (llamado también receptor 2 del factor de crecimiento epidérmico humano, también llamado erb-B2) antes del inicio del tratamiento?
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+
+- 1: Sí se le realizó
+- 2: No se le realizó
+- 97: No Aplica porque es cáncer de mama in situ
+- 98: No Aplica (no es cáncer de mama)
+- 99: Desconocido, el dato de esta variable no se encuentra descrito en los soportes clínicos
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*Si se realizó el examen en pacientes con cáncer de mama in situ, capturar la información.<br>
+*Se aclara que, si el HER2 efectivamente se realizó, pero éste fue posterior al inicio del tratamiento, la opción correcta en variable 31 es 2: No se realizó; sin embargo, en variables 32 y 33 se debe reportar la fecha y resultado de la prueba HER2 respectivamente.
+</p>
+
+---
+
+# Variable 32. Para cáncer de mama, fecha de realización de la única o última prueba HER2
+
+**Descripción:**
+Registre la fecha en el formato AAAA-MM-DD. Si conoce sólo el año y el mes, registre el día 15.
+
+**Tipo de dato:** Fecha
+
+### Valores permitidos
+
+- 1800-01-01: Desconocido, el dato de esta variable no se encuentra descrito en los soportes clínicos.
+- 1840-01-01: No Aplica porque es cáncer de mama in situ.
+- 1845-01-01: No Aplica (no es cáncer de mama) o marcó la variable 31 con la opción 2.
+
+---
+
+# Variable 33. Para cáncer de mama, resultado de la única o última prueba HER2
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+
+- 1: +++ (positivo)
+- 2: ++ (equivoco o indeterminado)
+- 3: + (negativo)
+- 4: cero ó (negativo)
+- 97: No Aplica porque es cáncer de mama in situ.
+- 98: No Aplica (no es cáncer de mama) o marcó la variable 31 con la opción 2.
+- 99: Desconocido, el dato de esta variable no se encuentra descrito en los soportes clínicos.
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*Para pacientes prevalentes (anteriores, reportados en periodos previos), que producto de una nueva IHQ por ejemplo postquirúrgica, se obtenga un resultado diferente del HER2 (en especial si reporta positivo), el dato debe ser ajustado, ya que el enfoque del tratamiento puede variar.
+</p>
+
+---
+
+# Variable 34. Para cáncer colorrectal, estadificación de Dukes
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+
+- 1: A
+- 2: B
+- 3: C
+- 4: D
+- 98: No Aplica (no es cáncer colorrectal)
+- 99: Es cáncer colorrectal pero no hay información en la historia clínica acerca de esta estadificación
+
+---
+
+# Variable 35. Fecha en que se realizó la estadificación de Dukes
+
+**Descripción:**
+Registre la fecha en el formato AAAAMM-DD. Si conoce sólo el año y el mes, registre el día 15.
+
+**Tipo de dato:** Fecha
+
+### Valores permitidos
+
+- 1845-01-01: No Aplica (no es cáncer colorrectal o respuesta 99 en la variable anterior)
+
+---
+
+# Variable 36. Estadificación clínica en linfoma no Hodgkin, linfoma Hodgkin adulto y pediátrico (Ann Arbor -Lugano) y mieloma múltiple
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+
+- 1: Estadio I
+- 2: Estadio II
+- 3: Estadio III
+- 4: Estadio IV
+- 5: Estadio IA
+- 6: Estadio IB
+- 7: Estadio IIA
+- 8: Estadio IIB
+- 9: Estadio IIIA
+- 10: Estadio IIIB
+- 11: Estadio IVA
+- 12: Estadio IVB
+- 13: Extranodal cualquier estadio
+- 14: Primario SNC
+- 15: Primario Mediastinal
+- 16: Primario de otros órganos
+- 98: No Aplica (porque es un tumor diferente a los enunciados)
+- 99: Desconocido, el dato de esta variable no se encuentra descrito en los soportes clínicos
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*Las opciones de respuesta con sufijos A y B contemplan la presencia o no de sintomatología sistémica, así mismo opciones de respuesta para compromiso extranodal de cualquier estadio, primarios en SNC, mediastinal o de otros órganos. Si sólo cuenta en los soportes con el estadio sin el sufijo, reportar la opción correspondiente de la 1 a la 4.<br>
+*Si de identifica un estadiaje en la historia clínica que incluya una X, indica que se trata de un linfoma con formación de masa Bulky (mayor a 10cm); elegir el estadio que aplique haciendo caso omiso al sufijo X.<br>
+*Para los usuarios con diagnóstico de cáncer a partir del 1 de noviembre de 2024 y que no alcanzaron a tener la consulta en donde se estadifica el tumor, reportar en esta variable la opción 99 y en la variable 128 la novedad 2, 10 o 13.<br>
+*Se incluye mieloma múltiple (MM) en el enunciado de la variable, para el reporte del estadiaje definido.
+</p>
+
+---
+
+# Variable 37. Para cáncer de próstata, valor de clasificación de la escala Gleason en el momento del diagnóstico
+
+**Descripción:**
+Registre la opción que corresponde a la clasificación Gleason
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 11: Gleason ≤ 6: ≤ 3+3
+- 12: Gleason 7: 3+4
+- 13: Gleason 7: 4+3
+- 14: Gleason 8: 4+4 o 3+5 o 5+3
+- 15: Gleason 9 o 10: 4+5 o 5+4 o 5+5
+- 97: Es cáncer de próstata, pero no hay información acerca de esta estadificación porque el diagnóstico fue clínico.
+- 98: No es cáncer de próstata.
+- 99: Es cáncer de próstata, pero no hay información en la historia clínica acerca de esta clasificación a pesar de que fue diagnóstico histopatológico.
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*En los casos nuevos para el reporte la opción 99 se considera un dato no gestionado.<br>
+*Las opciones de la 1 a la 10 no son válidas para pacientes reportados por primera vez a la CAC, independiente del año de diagnóstico; sólo se validan como parte del histórico a pacientes reportados antes del 2021.
+</p>
+
+---
+
+# Variable 38.  Clasificación del riesgo leucemias, linfomas, mieloma múltiple (para toda la población) y sólidos pediátricos
+
+**Descripción:**
+Registre la opción que corresponde a la clasificación Gleason
+
+**Tipo de dato:** Entero
+
+### Clasificación de riesgo en linfoma no Hodgkin
+- 1: Bajo Riesgo
+- 2: Riesgo intermedio bajo
+- 3: Intermedio
+- 4: Riesgo intermedio alto
+- 5: Riesgo alto
+
+### Clasificación de riesgo en linfoma de Hodgkin
+- 1: Bajo Riesgo
+- 5: Riesgo alto
+
+### Clasificación del riesgo en adultos (LLA, LMA y MM)
+- 1: Riesgo estándar, bajo
+- 3: Riesgo intermedio
+- 5: Riesgo alto
+
+### Clasificación del riesgo en Pediatría (LLA y LMA)
+- 1: Riesgo estándar, favorable, bajo riesgo
+- 3: Riesgo intermedio
+- 5: Riesgo alto, desfavorable
+- 98: No Aplica (no es leucemia, ni linfoma)
+- 99: Desconocido, el dato de esta variable no se encuentra descrito en los soportes clínicos
+
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*Se mantienen las opciones de respuesta 1 a la 5, pero clasificadas por tipo de cáncer (leucemias y linfomas), basados en los sistemas de clasificación disponibles para cada uno de ellos.
+
+*Las opciones 6 a la 13 sólo son válidos para pacientes reportados antes del 2021, haciendo parte del histórico.
+
+*Para los usuarios con diagnóstico de cáncer a partir del 1 de noviembre de 2024 y que no alcanzaron a tener la consulta en donde se realiza la clasificación del riesgo, reportar en esta variable la opción 99 y en la variable 128 la novedad 2, 10 o 13.
+
+*Para los pacientes con linfoma de Hodgkin (LH), la homologación del estadio debe estar basadaen los diferentes sistemas de clasificación (ejemplo: Hasenclever), en cuyo caso, si el estadio (variable 36) es I o II, el riesgo (variable 38) debe ser 1: Bajo riesgo y si el estadio es III o IV, la opción correcta es 2: Riesgo alto.
+
+*Se incluye mieloma múltiple (MM) en el enunciado de la variable, se debe reportar si el riesgo definido es bajo, intermedio o alto (1, 3 o 5).
+
+*Los siguientes cánceres no tienen clasificación de riesgo, por lo cual deben reportar la opción 98 no aplica.
+</p>
+
+---
+
+# Variable 39. Fecha de clasificación de riesgo
+
+**Descripción:**
+Registre la fecha en el formato AAAA-MM-DD. Si conoce sólo el año y el mes, registre el día 15.
+
+**Tipo de dato:** Fecha
+
+### Valores permitidos
+- 1800-01-01: Desconocido, el dato de esta variable no se encuentra descrito en los soportes clínicos.
+- 1845-01-01: No Aplica (no es leucemia, ni linfoma)
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*Para los usuarios con diagnóstico de cáncer a partir del 1 de noviembre de 2024 y que no alcanzaron a tener la consulta en donde se realiza la clasificación del riesgo, reportar en esta variable la opción 1800-01-01 y en la variable 128 la novedad 2, 10 ó 13.
+</p>
+
+---
+
+# Variable 40.  Objetivo (o intención) del tratamiento médico inicial (al diagnóstico)
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 1: Curación
+- 2: Paliación (intención paliativa) exclusivamente.
+- 3: Manejo expectante una vez se ha realizado el diagnóstico.
+- 99: Desconocido, el dato de esta variable no se encuentra descrito en los soportes clínicos.
+
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*La información de la variable corresponde a la decisión al momento del diagnóstico, esta no es
+modificable en el tiempo.
+</p>
+
+---
+
+# Variable 41. Intervención médica durante el periodo de reporte
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+
+- 1: Observación previa a tratamiento (manejo expectante o casos en los que ya tienen orden médica de tratamiento, pero no alcanzó a ser administrado, dado que está cercano a la fecha del corte)
+- 2: Ofrecer tratamiento curativo (quimioterapia, hormonoterapia, radioterapia, cirugía, terapia biológica) o paliativo dirigido al cáncer inicial o por recaída
+- 3: Observación o seguimiento oncológico luego de tratamiento inicial (incluye tratamientos médicos para enfermedad general -no oncológica- y métodos diagnósticos de seguimiento)
+- 4: 1 y 2 únicamente
+- 5: 2 y 3 únicamente
+- 6: 1, 2 y 3
+- 99: No hay intervención en el periodo (abandono de terapia, alta oncológica ó alta voluntaria)
+
+---
+
+<h2 style="color:#1D6E54;">ANTECEDENTES AL DIAGNÓSTICO DEL CÁNCER REPORTADO</h2>
+
+# Variable 42. Tiene antecedente o padece de otro cáncer primario (es decir, tiene o tuvo otro tumor maligno diferente al que está notificando)
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 1: Sí
+- 2: No
+- 99: Desconocido, el dato de esta variable no se encuentra descrito en los soportes clínicos.
+
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*Si el paciente tiene 2 cánceres primarios del mismo agrupador, se debe capturar la información del segundo primario en variables 42 a 44 (ejemplo: mama bilateral, igual información en variables 17 y 44).<br>
+*El segundo primario que se reporte, debe estar soportado en la historia clínica.<br>
+*En caso de 2 cánceres primarios, tratándose de un caso nuevo, necesariamente debe estar reportado en 2 líneas, cada uno con el primario que corresponda en variable 17, y en la variable 44, reportar el segundo primario.<br>
+*En los casos en que el paciente tiene 3 cáncer primarios, en el antecedente se debe reportar el más cercano a la fecha de corte.<br>
+*La opción 99 aplica para historias clínicas que no permitan descartar o confirmar un segundo tipo de cáncer, o que lo mencionen, pero sus datos son insuficientes.<br>
+</p>
+
+---
+
+# Variable 43. Fecha de diagnóstico del otro cáncer primario
+
+**Descripción:**
+Fecha en que se diagnosticó el otro cáncer primario que afecta al usuario en el formato AAAA-MM-DD. Si conoce sólo el año y el mes, registre el día 15.
+
+**Tipo de dato:** Fecha
+
+### Valores permitidos
+
+- 1800-01-01: Desconocido, el dato de esta variable no se encuentra descrito en los soportes clínicos.
+- 1845-01-01: No Aplica (no ha tenido otro cáncer primario).
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*Para los usuarios con diagnóstico de cáncer histopatológico a partir del 1 de noviembre de 2024 y que no alcanzaron a tener la consulta en donde se estadifica el tumor, reportar en esta variable la opción 1800-01-01 y en la variable 128 la novedad 2, 10 o 13.
+</p>
+
+---
+
+# Variable 44. Tipo (CIE-10) de ese cáncer antecedente o concurrente
+
+**Descripción:**
+Registre la enfermedad maligna antecedente o concurrente. Tenga en cuenta que antes de definir, por ejemplo, un linfoma, el usuario pudo tener un diagnóstico de cáncer a estudio o tumor de células pequeñas, redondas y azules, debe notificarse el linfoma. Registre el código de la enfermedad maligna diagnosticada al usuario según código CIE -10 (archivo operativo disponible en la plataforma SISCAC).
+
+**Tipo de dato:** Texto/Entero
+
+### Valores permitidos
+
+- 99: No Aplica (no hay antecedente o concurrencia de otro cáncer primario)
+
+---
+
+A continuación, las variables relacionadas con la estrategia terapéutica que recibió el paciente entre el 2 de enero de 2024 al 1 enero de 2025. Tener en cuenta que los pacientes que recibieron atención por entidades el régimen especial y EPS, cada entidad reporta el tratamiento que administró. Cuando el paciente presente dos o más primarios de cáncer, cada tratamiento se registra para el tipo de cáncer que corresponda, por ejemplo, histerectomía para cáncer de cérvix y esquema AC en cáncer de mama).
+
+<h2 style="color:#1D6E54;">INFORMACIÓN ESPECÍFICA DE TERAPIA SISTÉMICA E INTRATECAL EN EL PERIODO DE REPORTE ACTUAL</h2>
+
+# Variable 45. ¿Recibió el usuario quimioterapia u otra terapia sistémica (incluye quimioterapia, hormonoterapia, inmunoterapia y terapia dirigida) dentro del periodo de reporte?
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 1: Sí recibió
+- 98: No Aplica (no está indicada esta terapia, verifique que en las variables 46 a 73 se registra No Aplica)
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*Cuando el paciente tiene dos o más cánceres primarios registre la terapia sistémica que está recibiendo el paciente como tratamiento para el cáncer reportado en la variable 17 o la metástasis del mismo.<br>
+*Si el paciente tiene más de un cáncer primario, asegurarse de reportar la terapia que corresponde a cada una de las líneas.<br>
+*Sólo aplican tratamientos suministrados dentro del periodo de reporte.<br>
+*No aplican los propuestos, pero no administrados.
+</p>
+
+---
+
+# Variable 46. ¿Cuántas fases de quimioterapia recibió el usuario en este periodo de reporte? (aplica para hematolinfáticos con los siguientes códigos de clasificación diagnóstica CIE-10; C835 Linfoma no Hodgkin linfoblástico (difuso), C910 Leucemia linfoblástica aguda, C920 Leucemia mieloide aguda, C924 Leucemia promielocÌtica aguda y C925 Leucemia mielomonocítica aguda)
+
+**Descripción:**
+Escriba el número de fases de quimioterapia propuestas para este periodo
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 0: Es cáncer hematolinfático con los siguientes códigos de clasificación diagnóstica CIE 10 ( C835, C910, C920, C924 y C925) y en la variable 45 respondió la opción 98.
+- 98: No Aplica (es sólido o es cáncer diferente a los enunciados en las fases)
+
+---
+
+# Variable 46.1. El usuario recibió en este periodo la fase de quimioterapia denominada Prefase o Citorreducción inicial (aplica solo para leucemia linfoide aguda y linfoma linfoblástico, puede haber recibido más de una fase)
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 1: Sí recibió
+- 2: No recibió (aplica únicamente para los CIE 10 C835, C910, C920, C924 y C925)
+- 97: No Aplica (no es leucemia linfoide o mieloide aguda ni linfoma linfoblástico)
+
+---
+
+# Variable 46.2. El usuario recibió en este periodo la fase de quimioterapia denominada Inducción (aplica solo para leucemia linfoide o mieloide aguda y linfoma linfoblástico, puede haber recibido más de una fase)
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 1: Sí recibió
+- 2: No recibió (aplica únicamente para los CIE 10 C835, C910, C920, C924 y C925)
+- 97: No Aplica (no es leucemia linfoide o mieloide aguda ni linfoma linfoblástico)
+
+---
+
+# Variable 46.3. El usuario recibió en este periodo la fase de quimioterapia denominada Intensificación (aplica solo para leucemia linfoide o mieloide aguda y linfoma linfoblástico, puede haber recibido más de una fase)
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 1: Sí recibió
+- 2: No recibió (aplica únicamente para los CIE 10 C835, C910, C920, C924 y C925)
+- 97: No Aplica (no es leucemia linfoide o mieloide aguda ni linfoma linfoblástico)
+
+---
+
+# Variable 46.4. El usuario recibió en este periodo la fase de quimioterapia denominada Consolidación (aplica solo para leucemia linfoide o mieloide aguda y linfoma linfoblástico, puede haber recibido más de una fase)
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 1: Sí recibió
+- 2: No recibió (aplica únicamente para los CIE 10 C835, C910, C920, C924 y C925)
+- 97: No Aplica (no es leucemia linfoide o mieloide aguda ni linfoma linfoblástico)
+
+---
+
+# Variable 46.5. El usuario recibió en este periodo la fase de quimioterapia denominada Reinducción (aplica solo para leucemia linfoide aguda y linfoma linfoblástico, puede haber recibido más de una fase)
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 1: Sí recibió
+- 2: No recibió (aplica únicamente para los CIE 10 C835, C910, C920, C924 y C925)
+- 97: No Aplica (no es leucemia linfoide aguda ni linfoma linfoblástico)
+
+---
+
+# Variable 46.6. El usuario recibió en este periodo la fase de quimioterapia denominada Mantenimiento (aplica solo para leucemia linfoide o mieloide aguda y linfoma linfoblástico, puede haber recibido más de una fase)
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 1: Sí recibió
+- 2: No recibió (aplica únicamente para los CIE 10 C835, C910, C920, C924 y C925)
+- 97: No Aplica (no es leucemia linfoide o mieloide aguda ni linfoma linfoblástico)
+
+---
+
+# Variable 46.7. El usuario recibió en este periodo la fase de quimioterapia denominada Mantenimiento largo o final (aplica solo para leucemia linfoide o mieloide aguda y linfoma linfoblástico, puede haber recibido más de una fase)
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 1: Sí recibió
+- 2: No recibió (aplica únicamente para los CIE 10 C835, C910, C920, C924 y C925)
+- 97: No Aplica (no es leucemia linfoide o mieloide aguda ni linfoma linfoblástico)
+
+---
+
+# Variable 46.8.  El usuario recibió en este periodo Otra fase de quimioterapia denominada diferente a las anteriores (aplica solo para leucemia linfoide o mieloide aguda y linfoma linfoblástico, puede haber recibido más de una fase)
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 1: Sí recibió
+- 2: No recibió (aplica únicamente para los CIE 10 C835, C910, C920, C924 y C925)
+- 97: No Aplica (no es leucemia linfoide o mieloide aguda ni linfoma linfoblástico)
+
+---
+
+# Variable 47. Número de ciclos iniciados y administrados en el periodo de reporte, incluyendo el que aún recibe en la fecha de finalización del periodo (aplica para todos los cánceres)
+
+**Descripción:**
+Escriba el número de ciclos iniciados en el periodo de reporte actual (pueden ser ciclos en diferentes esquemas de manejo)
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 98: No Aplica o no la recibió, aunque fue formulada (en la variable 45 seleccionó 98)
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*Ciclos: el número de administraciones del esquema o protocolo según el plan terapéutico indicado por el especialista tratante.<br>
+*En el manejo de los tumores sólidos los ciclos generalmente tienen periodo de descanso entre una y otra administración del esquema, registre de acuerdo a la historia clínica.<br>
+*Para los cánceres hematolinfáticos registrar según la descripción en la historia clínica, ya que el ciclo se define por el protocolo que recibe el paciente.<br>
+*Para las hormonoterapias el dato en esta variable es 1 (un ciclo) en tratamientos orales sin periodos de descanso.<br>
+*Para las terapias hormonales vía intramuscular o subcutánea se cuenta el número de aplicaciones del periodo, cada aplicación es un ciclo.<br>
+*Cada administración de medicamentos vía intratecal, debe ser contada como un ciclo.
+
+</p>
+
+---
+
+# Variable 48. Ubicación temporal del primer o único esquema de quimioterapia o terapia sistémica en el periodo en relación al manejo oncológico
+
+**Descripción:**
+Escriba el número de ciclos iniciados en el periodo de reporte actual (pueden ser ciclos en diferentes esquemas de manejo)
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 1: Neoadyuvancia (manejo inicial prequirúrgico)
+- 2: Tratamiento inicial curativo sin cirugía sugerida (por ejemplo, sería una opción frecuente en caso de leucemias o linfomas, u otros cánceres a quienes no se les hizo cirugía)
+- 3: Adyuvancia (manejo inicial postquirúrgico)
+- 11: Manejo de recaída
+- 12: Manejo de enfermedad metastásica
+- 13: Manejo paliativo (sin manejo de recaída ni enfermedad metastásica)
+- 98: No Aplica (en la variable 45 seleccionó la opción 98)
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*Esquema o protocolo es el plan terapéutico de la terapia sistémica para el manejo curativo del cáncer, este puede ser uno o varios medicamentos que se administran en un mismo tiempo o en diferente tiempo según lo defina el profesional tratante basado en guías y protocolos médicos.<br>
+*En los casos de hormonoterapia para cáncer de mama que generalmente se administra por periodos de tiempo de 5 hasta 10 años, si éste comenzó posterior a cirugía, la opción de respuesta es adyuvancia.
+</p>
+
+---
+
+# Variable 49. Fecha de inicio del primer o único esquema de quimioterapia o terapia sistémica que recibió en este periodo. Este esquema pudo haber sido iniciado antes de periodo de reporte
+
+**Descripción:**
+Registre esta fecha en que se inició este esquema de quimioterapia en el formato AAAA-MM-DD. Si
+conoce sólo el año y el mes, registre el día 15.
+
+**Tipo de dato:** Fecha
+
+### Valores permitidos
+- 1845-01-01: No Aplica (en la variable 45 seleccionó la opción 98).
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*Es común que el paciente reciba esquemas prolongados, por tanto, es válido que la fecha a registrar en esta variable anteceda al periodo y se continúe suministrando en el periodo actual.
+</p>
+
+---
+
+# Variable 50. Número de IPS que suministran el primer o único esquema de quimioterapia o terapia sistémica de este periodo de reporte
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 98: No aplica (en la variable 45 seleccionó la opción 98)
+
+---
+
+# Variable 51. Código de la IPS1 que suministra el primer o único esquema de quimioterapia o terapia sistémica de este periodo de reporte
+
+**Descripción:**
+Registre el código de habilitación de IPS (disponible en la página web REPS – código de 12 dígitos incluido el cero inicial). Para todos los tratamientos orales, se debe consignar el código de habilitación de la IPS que le prescribió el tratamiento no el código del operador logístico que realiza la entrega.
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 96: Terapia sistémica suministrada fuera del país
+- 98: No Aplica (en la variable 45 seleccionó la opción 98)
+
+---
+
+# Variable 52. Código de la IPS2 que suministra el primer o único esquema de quimioterapia o terapia sistémica de este periodo de reporte
+
+**Descripción:**
+Registre el código de habilitación de IPS (disponible en la página web REPS – código de 12 dígitos incluido el cero inicial)
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 98: No Aplica
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*Verifique que la IPS cuente con el servicio de quimioterapia habilitado de acuerdo con el REPS<br>
+*Para todos los tratamientos orales, se debe consignar el código de habilitación de la IPS que le prescribió el tratamiento no el código del operador logístico que realiza la entrega.<br>
+*Se incluye en variable 51, la opción de terapia sistémica suministrada fuera del país, para pacientes con diagnóstico confirmado en Colombia o que actualmente residan en el país, quienes reciben al menos parte del esquema por un prestador extranjero.
+</p>
+
+---
+
+# Variable 53. Cuantos medicamentos antineoplásicos o terapia hormonal, el (los) especialista(s) tratante(s) del cáncer propusieron como manejo en el primer o único esquema de quimioterapia o terapia sistémica de este periodo de reporte
+
+**Descripción:**
+Escriba el número de medicamentos antineoplásicos propuestos en el primer esquema de este periodo. Recuerde descontar el número de medicamento adyuvantes o de premedicación de la terapia que no son antineoplásicos.
+
+**Tipo de dato:** Entero
+
+### Valores permitidos
+- 98: No Aplica (en la variable 45 seleccionó la opción 98)
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*Registrar el número total de medicamentos propuestos (no necesariamente administrados) durante el periodo, por el o los especialistas tratantes.<br>
+*En las variables 53.1 a 53.9 y 54 a 56, registre los ATC sólo de los fármacos administrados en el periodo.<br>
+*Los ATC correspondientes a esteroides (dexametasona, prednisolona, prednisona y metilprednisolona), no deben ser reportados en pacientes con cánceres sólidos, linfomas de Hodgkin ni con leucemia mieloide aguda, ya que su utilidad en este tipo de pacientes no está dada en efecto antineoplásico sino reducción de efectos adversos.<br>
+*Todo paciente con cáncer sólido o hematolinfático que reciba pegfilgastrim como parte de su esquema de tratamiento, debe ser reportado más no cuantificado. No es válido como monoterapia (único fármaco).<br>
+*Los fármacos antirresortivos (ácido ibandrónico, alendronato, zoledrónico y denosumab), sólo se consideran válidos para la cohorte, si su indicación corresponde a manejo de metástasis ósea, incluyendo hipercalcemia maligna. Debe ser reportado más no cuantificado.
+</p>
+
+---
+
+# Variable 53.1. Medicamento antineoplásico administrado al usuario- PRIMER o único esquema del periodo de reporte
+
+**Descripción:**
+Registre el código ATC del medicamento (Incluido o no en el plan de beneficios)
+
+**Tipo de dato:** Texto/Entero
+
+### Valores permitidos
+- 98: No aplica, en la variable 45 seleccionó la opción 98
+
+---
+
+# Variable 53.2. Medicamento antineoplásico administrado al usuario- PRIMER o único esquema del periodo de reporte
+
+**Descripción:**
+Registre el código ATC del medicamento (Incluido o no en el plan de beneficios)
+
+**Tipo de dato:** Texto/Entero
+
+### Valores permitidos
+- 97: Sí recibió quimioterapia, ya registrada en las variables anteriores (en la variable 45 seleccionó la opción 1)
+- 98: No aplica, en la variable 45 seleccionó la opción 98
+
+---
+
+# Variable 53.3. Medicamento antineoplásico administrado al usuario- PRIMER o único esquema del periodo de reporte
+
+**Descripción:**
+Registre el código ATC del medicamento (Incluido o no en el plan de beneficios)
+
+**Tipo de dato:** Texto/Entero
+
+### Valores permitidos
+- 97: Sí recibió quimioterapia, ya registrada en las variables anteriores (en la variable 45 seleccionó la opción 1)
+- 98: No aplica, en la variable 45 seleccionó la opción 98
+
+---
+
+# Variable 53.4. Medicamento antineoplásico administrado al usuario- PRIMER o único esquema del periodo de reporte
+
+**Descripción:**
+Registre el código ATC del medicamento (Incluido o no en el plan de beneficios)
+
+**Tipo de dato:** Texto/Entero
+
+### Valores permitidos
+- 97: Sí recibió quimioterapia, ya registrada en las variables anteriores (en la variable 45 seleccionó la opción 1)
+- 98: No aplica, en la variable 45 seleccionó la opción 98
+
+---
+
+# Variable 53.5. Medicamento antineoplásico administrado al usuario- PRIMER o único esquema del periodo de reporte
+
+**Descripción:**
+Registre el código ATC del medicamento (Incluido o no en el plan de beneficios)
+
+**Tipo de dato:** Texto/Entero
+
+### Valores permitidos
+- 97: Sí recibió quimioterapia, ya registrada en las variables anteriores (en la variable 45 seleccionó la opción 1)
+- 98: No aplica, en la variable 45 seleccionó la opción 98
+
+---
+
+# Variable 53.6. Medicamento antineoplásico administrado al usuario- PRIMER o único esquema del periodo de reporte
+
+**Descripción:**
+Registre el código ATC del medicamento (Incluido o no en el plan de beneficios)
+
+**Tipo de dato:** Texto/Entero
+
+### Valores permitidos
+- 97: Sí recibió quimioterapia, ya registrada en las variables anteriores (en la variable 45 seleccionó la opción 1)
+- 98: No aplica, en la variable 45 seleccionó la opción 98
+
+---
+
+# Variable 53.7. Medicamento antineoplásico administrado al usuario- PRIMER o único esquema del periodo de reporte
+
+**Descripción:**
+Registre el código ATC del medicamento (Incluido o no en el plan de beneficios)
+
+**Tipo de dato:** Texto/Entero
+
+### Valores permitidos
+- 97: Sí recibió quimioterapia, ya registrada en las variables anteriores (en la variable 45 seleccionó la opción 1)
+- 98: No aplica, en la variable 45 seleccionó la opción 98
+
+---
+
+# Variable 53.8. Medicamento antineoplásico administrado al usuario- PRIMER o único esquema del periodo de reporte
+
+**Descripción:**
+Registre el código ATC del medicamento (Incluido o no en el plan de beneficios)
+
+**Tipo de dato:** Texto/Entero
+
+### Valores permitidos
+- 97: Sí recibió quimioterapia, ya registrada en las variables anteriores (en la variable 45 seleccionó la opción 1)
+- 98: No aplica, en la variable 45 seleccionó la opción 98
+
+---
+
+# Variable 53.9. Medicamento antineoplásico administrado al usuario- PRIMER o único esquema del periodo de reporte
+
+**Descripción:**
+Registre el código ATC del medicamento (Incluido o no en el plan de beneficios)
+
+**Tipo de dato:** Texto/Entero
+
+### Valores permitidos
+- 97: Sí recibió quimioterapia, ya registrada en las variables anteriores (en la variable 45 seleccionó la opción 1)
+- 98: No aplica, en la variable 45 seleccionó la opción 98
+
+### Aclaraciones
+<p style="background-color:#17543D; padding:10px; color:white; border-radius:10px; font-size: .8rem">
+*Verifique que los ATC registrados en las variables se encuentre descritos en los soportes clínico y hayan sido administrados entre el 2 enero de 2024 al 1 enero de 2025.<br>
+*No debe capturar el mismo esquema de tratamiento en primer y segundo esquema
+</p>
+
+---
